@@ -57,9 +57,13 @@ public class UserserviceApplication {
 			));
 
 			userService.addRoleToUser("shavic", "ROLE_SUPER_ADMIN");
+			userService.addRoleToUser("shavic", "ROLE_ADMIN");
 			userService.addRoleToUser("jomba", "ROLE_ADMIN");
+			userService.addRoleToUser("jomba", "ROLE_SUPER_ADMIN");
 			userService.addRoleToUser("norra", "ROLE_MANAGER");
 			userService.addRoleToUser("mc", "ROLE_USER");
+			userService.addRoleToUser("norra", "ROLE_SUPER_ADMIN");
+			userService.addRoleToUser("shavic", "ROLE_USER");
 
 		};
 	}
