@@ -5,26 +5,20 @@ import io.getarrays.userservice.domain.User;
 
 import java.util.List;
 
-public class UserService {
 
-    User saveUser(User user) {
-        return null;
-    }
+public interface UserService {
 
-    Role saveRole(Role role) {
-        return null;
-    }
 
-    void addRoleToUser(String username, String roleName) {
 
-    }
+    User saveUser(User user);
 
-    User getUser(String username) {
-        return null;
-    }
+    Role saveRole(Role role);
 
-    List<User> getUsers() {
-        return null;
-    }
+    void addRoleToUser(String username, String roleName);
+
+    User getUser(String username);
+
+    List<User> getUsers();
 
 }
+
