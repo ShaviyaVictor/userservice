@@ -1,7 +1,7 @@
 # userServiceApi
 A Spring Boot web application to help in learning Spring Security using JSON Web Token. 
 
-<img src="#" width="700" height="350" alt="userservice_secure_RESTful_API">             
+<img src="https://github.com/ShaviyaVictor/userservice/blob/master/src/main/resources/static/images/userServiceScreenShot.png" width="600" height="300" alt="userservice_secure_RESTful_API" title="userServiceProject">             
 
 ## Built With
 
