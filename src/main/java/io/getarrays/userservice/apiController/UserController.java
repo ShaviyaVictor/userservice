@@ -3,6 +3,7 @@ package io.getarrays.userservice.apiController;
 import io.getarrays.userservice.domain.Role;
 import io.getarrays.userservice.domain.User;
 import io.getarrays.userservice.service.UserService;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -37,6 +38,18 @@ public class UserController {
                 "/api/role/save"
         ).toUriString());
         return ResponseEntity.created(uri).body(userService.saveRole(role));
+    }
+
+    @PostMapping(path = "/role/addtouser")
+    public ResponseEntity<?>addRoleToUser(@RequestBody RoleToUserForm form) {
+        userService.addRoleToUser(form.getUsername(), form.getRoleName());
+        return ResponseEntity.ok().build();
+    }
+
+    @Data
+    class RoleToUserForm {
+        private String username;
+        private String roleName;
     }
 
 }
