@@ -1,4 +1,4 @@
-# calendar
+# userServiceApi
 A Spring Boot web application to help in learning Spring Security using JSON Web Token. 
 
 <img src="#" width="700" height="350" alt="userservice_secure_RESTful_API">             
