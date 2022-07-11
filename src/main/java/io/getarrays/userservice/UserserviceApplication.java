@@ -55,6 +55,12 @@ public class UserserviceApplication {
 					"123456",
 					new ArrayList<>()
 			));
+
+			userService.addRoleToUser("shavic", "ROLE_SUPER_ADMIN");
+			userService.addRoleToUser("jomba", "ROLE_ADMIN");
+			userService.addRoleToUser("norra", "ROLE_MANAGER");
+			userService.addRoleToUser("mc", "ROLE_USER");
+
 		};
 	}
 
