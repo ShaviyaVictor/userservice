@@ -4,9 +4,16 @@ import io.getarrays.userservice.domain.Role;
 import io.getarrays.userservice.domain.User;
 import io.getarrays.userservice.repository.RoleRepository;
 import io.getarrays.userservice.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
-
+@Service
+@RequiredArgsConstructor
+@Transactional
+@Slf4j
 public class UserServiceImplementation implements UserService {
 
     private final UserRepository userRepository;
