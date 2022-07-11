@@ -2,11 +2,15 @@ package io.getarrays.userservice.service;
 
 import io.getarrays.userservice.domain.Role;
 import io.getarrays.userservice.domain.User;
+import io.getarrays.userservice.repository.RoleRepository;
+import io.getarrays.userservice.repository.UserRepository;
 
 import java.util.List;
 
 public class UserServiceImplementation implements UserService {
 
+    private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
 
     @Override
     public User saveUser(User user) {
