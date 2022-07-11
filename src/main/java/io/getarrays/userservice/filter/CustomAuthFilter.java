@@ -1,5 +1,6 @@
 package io.getarrays.userservice.filter;
 
+import com.auth0.jwt.algorithms.Algorithm;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -40,5 +41,6 @@ public class CustomAuthFilter extends UsernamePasswordAuthenticationFilter {
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authentication) throws IOException, ServletException {
         User user = (User) authentication.getPrincipal();
+        Algorithm algorithm = Algorithm.HMAC256("secret".getBytes());
     }
 }
