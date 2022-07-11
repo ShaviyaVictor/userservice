@@ -1,5 +1,6 @@
 package io.getarrays.userservice.apiController;
 
+import io.getarrays.userservice.domain.Role;
 import io.getarrays.userservice.domain.User;
 import io.getarrays.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +24,11 @@ public class UserController {
     @PostMapping(path = "/user/save")
     public ResponseEntity<User>saveUser(@RequestBody User user) {
         return ResponseEntity.ok().body(userService.saveUser(user));
+    }
+
+    @PostMapping(path = "/role/save")
+    public ResponseEntity<Role>saveRole(@RequestBody Role role) {
+        return ResponseEntity.ok().body(userService.saveRole(role));
     }
 
 }
