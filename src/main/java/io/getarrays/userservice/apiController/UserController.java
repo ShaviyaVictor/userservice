@@ -9,8 +9,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.net.URI;
 import java.util.List;
+
+import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 
 @RestController
 @RequiredArgsConstructor
@@ -44,6 +48,11 @@ public class UserController {
     public ResponseEntity<?>addRoleToUser(@RequestBody RoleToUserForm form) {
         userService.addRoleToUser(form.getUsername(), form.getRoleName());
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping(path = "/role/addtouser")
+    public void refreshToken(HttpServletRequest request, HttpServletResponse response) {
+        String authorizationHeader = request.getHeader(AUTHORIZATION);
     }
 
 }
