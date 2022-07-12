@@ -20,12 +20,12 @@ public class UserserviceApplication {
 		/*System.out.println("Yes! A weekend well spent. Thank You Jesus!");*/
 	}
 
-	/*@Bean
+	@Bean
 	PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
-	}*/
+	}
 
-	/*@Bean
+	@Bean
 	CommandLineRunner run(UserService userService) {
 		return args -> {
 			userService.saveRole(new Role(null, "ROLE_USER"));
@@ -72,6 +72,6 @@ public class UserserviceApplication {
 			userService.addRoleToUser("shavic", "ROLE_USER");
 
 		};
-	}*/
+	}
 
 }
