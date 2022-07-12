@@ -1,5 +1,7 @@
 package io.getarrays.userservice.filter;
 
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -21,6 +23,7 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
             if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
                 String token = authorizationHeader.substring("Bearer ".length());
                 Algorithm algorithm = Algorithm.HMAC256("secret".getBytes());
+                JWTVerifier verifier = JWT.require(algorithm).build();
             }
         }
     }
