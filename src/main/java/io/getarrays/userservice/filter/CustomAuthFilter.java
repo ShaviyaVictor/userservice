@@ -58,6 +58,7 @@ public class CustomAuthFilter extends UsernamePasswordAuthenticationFilter {
                 .withSubject(user.getUsername())
                 .withExpiresAt(new Date(System.currentTimeMillis() + 30 * 24 * 60 * 60 * 1000))
                 .withIssuer(request.getRequestURL().toString()).sign(algorithm);
-        
+        response.setHeader("access_token", access_token);
+        response.setHeader("refresh_token", refresh_token);
     }
 }
